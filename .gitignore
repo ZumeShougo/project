@@ -6,75 +6,75 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+/project-backend/vendor/bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-*
+/project-backend/db/*.sqlite3
+/project-backend/db/*.sqlite3-*
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/project-backend/log/*
+/project-backend/tmp/*
+/project-backend!/log/.keep
+/project-backend!/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+/project-backend/tmp/pids/*
+/project-backend!/tmp/pids/
+/project-backend!/tmp/pids/.keep
 
 # Ignore uploaded files in development.
-/storage/*
-!/storage/.keep
+/project-backend/storage/*
+/project-backend!/storage/.keep
 
-/public/assets
-.byebug_history
+/project-backend/public/assets
+/project-backend.byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+/project-backend/config/master.key
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+/project-backend/public/packs
+/project-backend/public/packs-test
+/project-backend/node_modules
+/project-backend/yarn-error.log
+/project-backend/yarn-debug.log*
+/project-backend.yarn-integrity
 
 #----------------project-frontend--------------------
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/project-frontend/node_modules
+/project-frontend/.pnp
+/project-frontend.pnp.js
 
 # testing
-/coverage
+/project-frontend/coverage
 
 # next.js
-/.next/
-/out/
+/project-frontend/.next/
+/project-frontend/out/
 
 # production
-/build
+/project-frontend/build
 
 # misc
-.DS_Store
-*.pem
+/project-frontend.DS_Store
+/project-frontend*.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+/project-frontendnpm-debug.log*
+/project-frontendyarn-debug.log*
+/project-frontendyarn-error.log*
+/project-frontend.pnpm-debug.log*
 
 # local env files
-.env*.local
+/project-frontend.env*.local
 
 # vercel
-.vercel
+/project-frontend.vercel
 
 # typescript
-*.tsbuildinfo
-next-env.d.ts
+/project-frontend*.tsbuildinfo
+/project-frontendnext-env.d.ts
 
