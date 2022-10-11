@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  db:
+    image: library/postgres:latest
+    environment:
+      POSTGRES_PASSWORD: password
+    ports:
+      - '15432:5432'
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: project-backend
+    volumes:
+      - ./project-backend:/usr/src/app
+      - ./project-backend/vendor/bundle:/usr/local/bundle
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: password
+      DB_PORT: 5432
+      DB_HOST: db
+      RAILS_MAX_THREADS: 5
+      RAILS_ENV: development
+    container_name: backend
+
+  frontend:
+    build:
+      context: project-frontend
+    volumes:
+      - ./project-frontend:/usr/src/app
+    ports:
+      - '3000:3000'
+    container_name: frontend
+volumes:
+  pg-data:
+    driver: local
